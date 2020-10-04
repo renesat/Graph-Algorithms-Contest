@@ -1,0 +1,172 @@
+#+TITLE: Задачи на графы
+#+LANGUAGE: russian
+#+OPTIONS: date:nil toc:nil todo:nil num:nil title:nil
+
+#+LATEX_CLASS: empty
+#+LATEX_COMPILER: xelatex
+#+LATEX_HEADER: \usepackage{longtable}
+#+LATEX_HEADER: \usepackage{wrapfig}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage[normalem]{ulem}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{breqn}
+#+LATEX_HEADER: \usepackage{textcomp}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \usepackage{capt-of}
+#+LATEX_HEADER: \usepackage{hyperref}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage{polyglossia}
+#+LATEX_HEADER: \setmainlanguage{russian}
+#+LATEX_HEADER: \setotherlanguage{english}
+#+LATEX_HEADER: \setkeys{russian}{babelshorthands=true}
+#+LATEX_HEADER: \PolyglossiaSetup{russian}{indentfirst=true}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \setmainfont{Liberation Serif}
+#+LATEX_HEADER: \usepackage{minted}
+# #+LATEX_HEADER: \usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \PassOptionsToPackage{final}{graphicx}
+#+LATEX_HEADER: \usepackage{caption}
+#+LATEX_HEADER: \usepackage{subcaption}
+#+LATEX_HEADER: \usepackage{wrapfig}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \definecolor{friendlybg}{HTML}{f0f0f0}
+
+
+* DONE Задача 1
+:PROPERTIES:
+:SOURCE:   https://codeforces.com/problemset/problem/34/D
+:END:
+
+** Постановка
+
+В небольшой стране $n$ городов.
+Каждый город имеет номер — целое число от $1$ до $n$.
+Столица имеет номер $g_{1}$.
+Дороги между городами двухсторонние, причем
+есть только один путь от столицы до каждого города.
+
+Карта хранится в следующем виде:
+для каждого нестоличного города $i$ хранится число $r_{i}$ -
+номер последнего города на пути из столицы в город $i$.
+
+Было решено перенести столицу из города $g_{1}$ в город $g_{2}$.
+После этого старое представление карты перестало быть верным.
+Необходимо найти новое представление карты дорог в описанном выше виде.
+
+** Входные данные
+
+Первая строка содержит следующие 3 числа:
+$n$, $g_{1}$, $g_{2}$,
+ограниченные следующими условиями
+$2 \leq n \leq 5 \cdot 10^{4}$ и $1 \leq g_{1} \neq g_{2} \leq n$.
+количество городов,
+номер старой столицы и номер новой столицы соответственно.
+
+Следующая строка содержит $n-1$ чисел - старое представление карты дорог.
+
+Для всех городов за исключением $g_{1}$ задано целое число $p_{i}$
+(номер последнего города на пути из столицы в город $i$).
+Все города описаны в порядке увеличения номеров.
+
+** Выходные данные
+
+Выведите $n - 1$ чисел — новое представление карты дорог в том же формате.
+
+** Пример 1
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+3 2 3
+
+2 2
+&
+2 3
+\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+** Пример 2
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+6 2 4
+
+6 1 2 4 2
+&
+6 4 1 4 2
+\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\pagebreak
+* DONE Задача 2
+:PROPERTIES:
+:SOURCE:   https://codeforces.com/problemset/problem/1167/C
+:END:
+** Постановка
+
+Имеется $n$ людей. Они общаются в $m$ группах.
+Человек $x$ узнает новось из внешнего источника.
+Затем этот пользователь отправляет новость всем своим друзьям
+(друзья если оба общаются в какой-нибудь группе).
+Друзья сообщают новость своим друзьям и тд.
+Это происходит до того, как не останется пары друзе, в которой один
+знает новость, а другой - нет.
+
+Для каждого пользователя необходимо определить сколько пользователей узнает
+новость, если он начнет её распространять.
+
+** Входные данные
+
+В первой строке записаны два целых числа $n$ и $m$
+($1 \leq n$, $m \leq 5 \cdot 10^{5}$) — количество пользователей и групп, соответственно.
+
+Далее следуют $m$ строк с описанием групп.
+Строка $i$ начинается целым числом $0 \leq g_{i} \leq n$ — количество пользователей в
+группе $i$.
+Далее следуют $g_{i}$ чисел, обозначающих пользователей.
+$\sum_{i=1}^{m} k_{i} \leq 5 \cdot 10^{5}$.
+
+** Выходные данные
+
+Выведите $n$ целых чисел
+равных количеству узнавших новость для каждого человека.
+
+** Пример
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+7 5
+
+3 2 5 4
+
+0
+
+2 1 2
+
+1 1
+
+2 6 7
+&
+4 4 1 4 4 2 2
+\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\pagebreak
+* TODO Задача 3
+* TODO Задача 4
+* TODO Задача 5
