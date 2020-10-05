@@ -34,7 +34,7 @@
 
 
 * DONE Задача 1
-- source :: https://codeforces.com/problemset/problem/34/D
+# Source: https://codeforces.com/problemset/problem/34/D
 
 ** Постановка
 
@@ -107,7 +107,7 @@ $2 \leq n \leq 5 \cdot 10^{4}$ и $1 \leq g_{1} \neq g_{2} \leq n$.
 
 \pagebreak
 * DONE Задача 2
-- source :: https://codeforces.com/problemset/problem/1167/C
+# Source: https://codeforces.com/problemset/problem/1167/C
 ** Постановка
 
 Имеется $n$ людей. Они общаются в $m$ группах.
@@ -164,7 +164,7 @@ $\sum_{i=1}^{m} k_{i} \leq 5 \cdot 10^{5}$.
 
 \pagebreak
 * DONE Задача 3
-- source :: https://codeforces.com/problemset/problem/62/D
+# Source: https://codeforces.com/problemset/problem/62/D
 
 ** Постановка
 
@@ -255,7 +255,7 @@ None
 
 \pagebreak
 * DONE Задача 4
-- source :: https://codeforces.com/contest/1253/problem/D
+# Source: https://codeforces.com/contest/1253/problem/D
 ** Постановка
 
 Дан неориентированный граф из $n$ вершин
@@ -325,7 +325,7 @@ $t_{i}$ и $g_{i}$ ($1 \leq t_{i}, g_{i} \leq n$, $t_{i} \neq g_{i}$),
 \pagebreak
 
 * DONE Задача 5
-- source :: https://codeforces.com/problemset/problem/117/C
+# Source: https://codeforces.com/problemset/problem/117/C
 ** Постановка
 
 Турнир — ориентированный граф без петель, в котором каждая
